@@ -8,9 +8,7 @@
 		"dev": "tsc --watch",
 		"start": "bun run build && node dist/index.js",
 		"test": "bun test",
-		"typecheck": "tsc --noEmit",
-		"lint": "biome check .",
-		"format": "biome format --write ."
+		"typecheck": "tsc --noEmit"
 	},
 	"bin": {
 		"env": "dist/index.js"

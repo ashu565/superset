@@ -7,8 +7,6 @@
 	"main": "./src/index.ts",
 	"types": "./src/index.ts",
 	"scripts": {
-		"lint": "biome check .",
-		"format": "biome format --write .",
 		"typecheck": "tsc --noEmit",
 		"db:gen": "drizzle-kit generate",
 		"db:push": "drizzle-kit push",
@@ -33,6 +31,7 @@
 	},
 	"devDependencies": {
 		"@superset/typescript": "*",
+		"@types/node": "^24.9.1",
 		"drizzle-kit": "^0.31.5",
 		"typescript": "^5.9.3"
 	}

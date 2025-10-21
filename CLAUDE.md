@@ -76,12 +76,25 @@ Actionable rules for repo agents—keep diffs minimal, safe, token-efficient.
 - `bun dev` - Run all dev servers (via Turbo)
 - `bun test` - Run all tests
 - `bun build` - Build all packages
-- `bun run typecheck` - Type check all packages
-- `bun run lint` - Lint all packages (via Turbo)
-- `bun run lint:fix` - Auto-fix linting issues
-- `bun run format` - Format code with Biome
+- `bun run typecheck` - Type check all packages (via Turbo)
+- `bun run lint` - Check code quality with Biome (format + lint, read-only)
+- `bun run lint:fix` - Fix code quality issues with Biome (format + lint, with writes)
+- `bun run format` - Format code with Biome (write mode)
+- `bun run format:check` - Check code formatting with Biome (read-only)
 - `bun run clean` - Clean root node_modules
 - `bun run clean:workspaces` - Clean all workspace node_modules
+
+### Linting & Formatting
+
+- This monorepo uses Biome for both formatting and linting
+- Biome runs at the **root level** (not per-package) for speed and consistency
+- `biome check` = runs both formatter AND linter
+- `biome format` = runs formatter only
+- Workflow:
+  - `bun run lint` - Check for issues (no changes)
+  - `bun run lint:fix` - Fix all auto-fixable issues
+  - `bun run format` - Format code only
+  - `bun run format:check` - Check formatting only (useful for CI)
 
 ### Notes
 
