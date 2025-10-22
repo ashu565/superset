@@ -22,12 +22,11 @@ export function HeroParallax({
 		offset: ["start start", "end start"],
 	});
 
-	const y = useTransform(scrollYProgress, [0, 1], ["0%", `${speed * 100}%`]);
 	const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.5, 0]);
 
 	return (
 		<div ref={ref} className={className}>
-			<motion.div style={{ y, opacity }}>{children}</motion.div>
+			<motion.div style={{ opacity }}>{children}</motion.div>
 		</div>
 	);
 }

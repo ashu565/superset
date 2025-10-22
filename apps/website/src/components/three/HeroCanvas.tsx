@@ -92,15 +92,15 @@ function LitBackground() {
             </group>
 
             {/* Ambient light for base visibility */}
-            <ambientLight intensity={0.2} />
+            <ambientLight intensity={0.3} />
 
             {/* Point light that follows mouse */}
             <pointLight
                 ref={lightRef}
-                intensity={30}
-                color="#ff9999"
+                intensity={15}
+                color="#ffcccc"
                 distance={50}
-                decay={0.5}
+                decay={0.8}
             />
         </>
     );
