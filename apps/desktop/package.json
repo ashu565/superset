@@ -26,6 +26,7 @@
 		"lint:fix": "biome check --write --no-errors-on-unmatched --assist-enabled=true"
 	},
 	"dependencies": {
+		"@superset/ui": "workspace:*",
 		"@xterm/xterm": "^5.5.0",
 		"@xterm/addon-fit": "^0.10.0",
 		"@xterm/addon-search": "^0.15.0",

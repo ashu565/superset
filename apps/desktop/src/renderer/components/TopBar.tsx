@@ -1,3 +1,5 @@
+import { Button } from "@superset/ui/button";
+
 interface TopBarProps {
 	isSidebarOpen: boolean;
 	onOpenSidebar: () => void;
@@ -15,9 +17,10 @@ export function TopBar({ isSidebarOpen, onOpenSidebar }: TopBarProps) {
 				style={{ paddingLeft: isSidebarOpen ? "1rem" : "88px" }}
 			>
 				{!isSidebarOpen && (
-					<button
+					<Button
+						variant="ghost"
+						size="icon-sm"
 						onClick={onOpenSidebar}
-						className="p-2 opacity-70 hover:opacity-100 transition-colors rounded hover:bg-neutral-800"
 					>
 						<svg
 							width="16"
@@ -33,7 +36,7 @@ export function TopBar({ isSidebarOpen, onOpenSidebar }: TopBarProps) {
 								strokeLinecap="round"
 							/>
 						</svg>
-					</button>
+					</Button>
 				)}
 			</div>
 
@@ -72,7 +75,7 @@ export function TopBar({ isSidebarOpen, onOpenSidebar }: TopBarProps) {
 
 			{/* Right section - Actions */}
 			<div className="flex items-center gap-2">
-				<button className="p-1.5 opacity-70 hover:opacity-100 transition-colors rounded hover:bg-neutral-800">
+				<Button variant="ghost" size="icon-sm">
 					<svg
 						width="16"
 						height="16"
@@ -87,8 +90,8 @@ export function TopBar({ isSidebarOpen, onOpenSidebar }: TopBarProps) {
 							strokeLinecap="round"
 						/>
 					</svg>
-				</button>
-				<button className="p-1.5 opacity-70 hover:opacity-100 transition-colors rounded hover:bg-neutral-800">
+				</Button>
+				<Button variant="ghost" size="icon-sm">
 					<svg
 						width="16"
 						height="16"
@@ -100,7 +103,7 @@ export function TopBar({ isSidebarOpen, onOpenSidebar }: TopBarProps) {
 						<circle cx="8" cy="3" r="1.5" fill="currentColor" />
 						<circle cx="8" cy="13" r="1.5" fill="currentColor" />
 					</svg>
-				</button>
+				</Button>
 			</div>
 		</div>
 	);
